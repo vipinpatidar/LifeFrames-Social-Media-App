@@ -1,0 +1,148 @@
+@import "../../style.scss";
+
+.storiesModel {
+  @include themify($themes) {
+    position: fixed;
+    top: calc(55%);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    margin: auto;
+    background-color: themed("bgModal");
+    color: themed("textColor");
+    width: 40%;
+    height: 600px;
+    overflow-y: scroll;
+    border-radius: 10px;
+    box-shadow: 0px 0px 25px -12px rgba(0, 0, 0, 0.4);
+
+    h1 {
+      text-align: center;
+      padding: 0rem 1rem 0rem;
+      font-size: 28px;
+    }
+
+    .storiesHeading {
+      font-size: 22px;
+      margin: 1rem 0;
+    }
+
+    .close {
+      width: max-content;
+      margin: 12px 15px 0 auto;
+
+      button {
+        cursor: pointer;
+        border: none;
+        outline: none;
+        border-radius: 50%;
+        padding: 3px 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        background-color: rgb(255, 143, 143);
+      }
+    }
+    .updateForm {
+      padding: 2rem 1.6rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .inputBlock {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      label {
+        font-size: 18px;
+      }
+
+      input[type="file"]::file-selector-button {
+        border: none;
+        outline: none;
+        padding: 10px 20px;
+        background-color: rgb(249, 92, 142);
+      }
+    }
+
+    .btnBlock {
+      text-align: center;
+      margin-top: 0.5rem;
+
+      button {
+        border: none;
+        outline: none;
+        background-color: #6f68f8;
+        padding: 10px 20px;
+        color: themed("textColor");
+        letter-spacing: 1px;
+        cursor: pointer;
+      }
+    }
+
+    @include tablet {
+      width: 65%;
+    }
+
+    @include mobile {
+      width: 90%;
+    }
+  }
+
+  .modalStories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 10px;
+    padding: 1rem 3rem;
+    width: 100%;
+    padding-bottom: 1rem;
+    height: max-content;
+
+    @include tablet {
+      padding: 1rem;
+    }
+
+    .modalStory {
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
+      height: 420px;
+      background: linear-gradient(
+        349deg,
+        rgba(238, 174, 202, 1) 0%,
+        rgba(148, 187, 233, 1) 100%
+      );
+
+      @include tablet {
+        height: 320px;
+      }
+
+      .storyDeleteBtn {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        width: 27px;
+        height: 27px;
+        cursor: pointer;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+      }
+      @include mobile {
+        width: 100%;
+      }
+    }
+  }
+}

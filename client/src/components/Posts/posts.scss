@@ -1,0 +1,9 @@
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+
+  @media (max-width: 767px) {
+    gap: 20px;
+  }
+}
