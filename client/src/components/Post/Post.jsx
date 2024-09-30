@@ -113,7 +113,7 @@ const Post = ({ post }) => {
               )}
             </div>
           ) : (
-            <MoreHorizIcon />
+            ""
           )}
         </div>
         <div className="content">

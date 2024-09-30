@@ -50,6 +50,9 @@ const Share = () => {
 
   const addPostHandler = async (e) => {
     e.preventDefault();
+
+    if (!description || !image) return;
+
     let imgUrl = "";
 
     if (image) imgUrl = await upload();

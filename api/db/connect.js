@@ -5,7 +5,7 @@ export const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   database: "socialapp",
-  password: `xxxx`,
+  password: process.env.DATABASE_PASSWORD,
   charset: "utf8mb4",
 });
 
